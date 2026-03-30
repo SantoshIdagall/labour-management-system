@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🔗 Backend Connection Test | Labour Management System</title>
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(135deg, #2193b0, #6dd5ed);
+      height: 100vh;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .box {
+      background-color: #fff;
+      padding: 30px 40px;
+      border-radius: 15px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+      text-align: center;
+      width: 400px;
+    }
+
+    h2 {
+      color: #0077b6;
+      margin-bottom: 20px;
+    }
+
+    button {
+      background-color: #0077b6;
+      color: white;
+      padding: 12px 18px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1rem;
+      font-weight: bold;
+      transition: all 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #023e8a;
+      transform: scale(1.05);
+    }
+
+    pre {
+      background: #f1f1f1;
+      padding: 15px;
+      border-radius: 8px;
+      margin-top: 20px;
+      text-align: left;
+      font-size: 0.9rem;
+      height: 200px;
+      overflow: auto;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="box">
+    <h2>🔍 Test Backend Connection</h2>
+    <button onclick="checkConnection()">Check Connection</button>
+    <pre id="output">Click the button to test connection...</pre>
+  </div>
+
+  <script>
+    function checkConnection() {
+      document.getElementById("output").textContent = "Connecting to backend...";
+
+      fetch("http://localhost:8080/api/labours/all")  // ✅ Backend API
+        .then(res => {
+          if (!res.ok) throw new Error("Server returned " + res.status);
+          return res.json();
+        })
+        .then(data => {
+          document.getElementById("output").textContent =
+            "✅ Connection Successful! Received Data:\n\n" +
+            JSON.stringify(data, null, 2);
+        })
+        .catch(err => {
+          document.getElementById("output").textContent =
+            "Connection Failed:\n" + err;
+        });
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Labour Dashboard</title>
+  <link rel="stylesheet" href="../../style.css">
+
+  <style>
+    /* 🌈 Full Page Setup */
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      background-color: #f1bcaffd; /* 🔴 Deep Red Background */
+      font-family: "Poppins", sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+    }
+
+    /* ⚪ Dashboard Container */
+    .dashboard-container {
+      background: rgba(255, 255, 255, 0.1);
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      border-radius: 20px;
+      padding: 40px 60px;
+      text-align: center;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(8px);
+    }
+
+    /* 🔖 Heading Label */
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 40px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #485372;
+      border-bottom: 3px solid white;
+      display: inline-block;
+      padding-bottom: 10px;
+    }
+
+    /* 🧱 Buttons Layout */
+    .button-container {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      align-items: center;
+    }
+
+    button {
+      width: 260px;
+      padding: 15px 0;
+      background-color: white;
+      border: none;
+      border-radius: 10px;
+      font-size: 1rem;
+      font-weight: bold;
+      color: #b32100f4;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #ffcccc;
+      transform: scale(1.05);
+    }
+
+    /* 🏷️ Footer */
+    footer {
+      position: absolute;
+      bottom: 20px;
+      width: 100%;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #c5a5a5;
+    }
+  </style>
+</head>
+<body>
+  <div class="dashboard-container">
+    <h1>Labour Dashboard</h1>
+
+    <div class="button-container">
+      <button onclick="location.href='addLabour.html'"> Add Labour</button>
+      <button onclick="location.href='updateLabour.html'"> Update Labour</button>
+      <button onclick="location.href='viewLabours.html'"> Show All Labours</button>
+      <button onclick="location.href='../../welcome.html'"> Back to Labour Management</button>
+    </div>
+  </div>
+
+  <footer>
+    © 2025 Labour Management System | Designed by <strong>Santosh Idagall</strong>
+  </footer>
+</body>
+</html>

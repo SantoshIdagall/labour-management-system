@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Client Dashboard</title>
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    body {
+      background-color: #12337bee; /* Dark background */
+      color: #1b5d9074; /* Light text */
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
+
+    h2 {
+      margin-top: 40px;
+      font-size: 2rem;
+      color: lab(94.2% 2.02 0.7 / 0.859);
+      letter-spacing: 1px;
+    }
+
+    .nav-buttons {
+      margin-top: 50px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .nav-buttons a {
+      text-decoration: none;
+      background: #1f1f1f;
+      color: #f5f5f5;
+      padding: 12px 30px;
+      border-radius: 10px;
+      transition: all 0.3s ease;
+      border: 1px solid #333;
+      width: 220px;
+      text-align: center;
+      font-weight: bold;
+    }
+
+    .nav-buttons a:hover {
+      background-color: #00bcd4;
+      color: #121212;
+      transform: scale(1.05);
+      box-shadow: 0 0 10px #00bcd4;
+    }
+    
+  </style>
+</head>
+<body>
+  <h2>Client Dashboard</h2>
+  <div class="nav-buttons">
+    <a href="addClient.html">Add Client</a>
+     <a href="updateClient.html">Update Client</a> 
+      <a href="../labour/viewLabours.html">Update Client</a> 
+    
+    <!-- <a href="viewClient.html">View All Clients</a> -->
+     
+     <button onclick="location.href='../../welcome.html'">⬅ Back to Labour Management</button>
+  </div>
+</body>
+</html>

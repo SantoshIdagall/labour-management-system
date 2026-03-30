@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Welcome | Labours Management System</title>
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    /* 🌈 Modern Background */
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(135deg, #89f7fe, #66a6ff);
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    /* 🏷️ Header */
+    header {
+      margin-top: 60px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 2.8rem;
+      font-weight: 700;
+      color: #222;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      border-bottom: 3px solid #007bff;
+      display: inline-block;
+      padding-bottom: 10px;
+    }
+
+    /* 📦 Box Layout */
+    .box-container {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 40px;
+      margin-top: 60px;
+    }
+
+    /* 🧱 Individual Box */
+    .box {
+      background: #ffffff;
+      border-radius: 15px;
+      width: 260px;
+      height: 320px;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.4s ease;
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+    }
+
+    .box:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 25px rgba(0, 123, 255, 0.3);
+    }
+
+    /* 🖼️ Icons */
+    .box img {
+      width: 100px;
+      height: 100px;
+      margin-top: 40px;
+      border-radius: 50%;
+      border: 3px solid #007bff;
+      background-color: #f0f8ff;
+      padding: 5px;
+    }
+
+    /* 🧩 Text */
+    .box h2 {
+      margin-top: 25px;
+      font-size: 1.5rem;
+      color: #007bff;
+    }
+
+    /* 🔻 Footer */
+    footer {
+      margin-top: auto;
+      padding: 25px;
+      text-align: center;
+      color: #444;
+      font-size: 0.9rem;
+    }
+
+    footer strong {
+      color: #007bff;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Welcome to Labours Management System</h1>
+  </header>
+
+  <!--  Boxes -->
+  <div class="box-container">
+    <!--  Adminbox  admin page open -->
+    <div class="box" onclick="location.href='pages/admin/admin-login.html'">
+      <img src="https://thumbs.dreamstime.com/b/admin-user-icon-account-has-virtually-unlimited-access-to-all-programs-isolated-background-vector-illustration-322126763.jpg" alt="Admin" />
+      <h2>Admin</h2>
+    </div>
+
+    <!-- clientbox  click client page will open-->
+    <div class="box" onclick="location.href='pages/client/clientback.html'">
+      <img src="https://cdn-icons-png.flaticon.com/512/219/219983.png" alt="Client" />
+      <h2>Client</h2>
+    </div>
+
+    <!--  Labourbox click labour page  -->
+    <div class="box" onclick="location.href='pages/labour/labour.html'">
+      <img src="https://cdn-icons-png.flaticon.com/512/3526/3526099.png" alt="Labour" />
+      <h2>Labour</h2>
+    </div>
+  </div>
+ 
+
+  <footer>
+    © 2025 Labours Management System | Designed by <strong>Santosh Idagall</strong>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Dashboard | Labour Management System</title>
+  <link rel="stylesheet" href="../style.css" />
+
+  <style>
+    /* 🌈 Smooth Light-Gradient Background */
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(135deg, #00b4db, #0083b0); /* Teal Blue Gradient */
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+    }
+
+    /* 📦 Center Dashboard Box */
+    .dashboard-box {
+      background: rgba(255, 255, 255, 0.15);
+      border-radius: 20px;
+      padding: 50px 60px;
+      text-align: center;
+      width: 450px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(12px);
+      animation: fadeIn 0.8s ease;
+    }
+
+    /* 🏷️ Heading */
+    h1 {
+      font-size: 2.2rem;
+      margin-bottom: 15px;
+      color: #ffffff;
+      text-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+      letter-spacing: 1px;
+    }
+
+    p {
+      font-size: 1rem;
+      color: #e6f7ff;
+      margin-bottom: 30px;
+    }
+
+    /* 🔘 Button Styles */
+    .btn {
+      display: block;
+      width: 100%;
+      padding: 15px;
+      margin: 10px 0;
+      background-color: #ffffff;
+      color: #0083b0;
+      border: none;
+      border-radius: 10px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.3s ease;
+      box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
+    }
+
+    .btn:hover {
+      background-color: #e6f7ff;
+      color: #006f8c;
+      transform: scale(1.05);
+      box-shadow: 0 8px 15px rgba(255, 255, 255, 0.3);
+    }
+
+    /* 🏠 Back Button */
+    .back-btn {
+      background-color: #006f8c;
+      color: white;
+    }
+
+    .back-btn:hover {
+      background-color: #004c66;
+    }
+
+    /* ✨ Fade-in Animation */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* 🦶 Footer */
+    footer {
+      position: absolute;
+      bottom: 20px;
+      color: #fff;
+      text-align: center;
+      width: 100%;
+      font-size: 0.9rem;
+      letter-spacing: 0.5px;
+      opacity: 0.8;
+    }
+  </style>
+</head>
+<body>
+  <div class="dashboard-box">
+    <h1>Admin Dashboard</h1>
+    <p>Manage Clients and Labours efficiently</p>
+
+    <!-- Action Buttons -->
+    <button class="btn" onclick="location.href='../client/viewClient.html'"> View Clients</button>
+    <button class="btn" onclick="location.href='../labour/viewLabours.html'"> View Labours</button>
+
+    <!-- Back Button -->
+     <button onclick="location.href='../../welcome.html'">Back to Labour Management</button>
+
+  <footer> ©Labour Management System | Designed by<strong>Santosh Idagall</strong>
+  </footer>
+</body>
+</html>

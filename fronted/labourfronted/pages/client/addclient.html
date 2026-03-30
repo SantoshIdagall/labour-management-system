@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register Client | Labour Management System</title>
+  <link rel="stylesheet" href="../style.css">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(135deg, #0072ff, #00c6ff);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .register-container {
+      background: #ffffff;
+      border-radius: 15px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+      width: 400px;
+      padding: 40px 50px;
+      text-align: center;
+      animation: fadeIn 0.7s ease;
+    }
+
+    h2 {
+      color: #0072ff;
+      font-weight: 700;
+      margin-bottom: 25px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 1rem;
+      transition: 0.3s;
+    }
+
+    input:focus {
+      border-color: #0072ff;
+      outline: none;
+      box-shadow: 0 0 6px rgba(0, 114, 255, 0.4);
+    }
+
+    .main-btn {
+      display: block;
+      width: 100%;
+      text-align: center;
+      padding: 12px;
+      margin-top: 12px;
+      background-color: #0072ff;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+
+    .main-btn:hover {
+      background-color: #0059c1;
+      transform: scale(1.05);
+    }
+
+    .back-btn {
+      background-color: #66b2ff;
+    }
+
+    .back-btn:hover {
+      background-color: #3385ff;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(25px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="register-container">
+    <h2>Register Client</h2>
+    <form id="clientForm">
+      <input id="fullname" placeholder="Full Name" required><br>
+      <input id="location" placeholder="Location" required><br>
+      <input id="contactNumber" placeholder="Contact Number" required><br>
+
+      <button type="submit" class="main-btn">Register</button>
+      <a href="clientback.html" class="main-btn back-btn">⬅ Back</a>
+    </form>
+  </div>
+
+  <script>
+    const form = document.getElementById("clientForm");
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      const clientData = {
+        fullName: document.getElementById("fullname").value.trim(),
+        phoneNumber: document.getElementById("contactNumber").value.trim(),
+        location: document.getElementById("location").value.trim(),
+      };
+
+      // Simple client-side validation
+      if (!clientData.fullName || !clientData.phoneNumber || !clientData.location) {
+        alert("Please fill in all fields.");
+        return;
+      }
+
+      try {
+        const response = await fetch("http://localhost:8080/api/clients/register", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(clientData),
+        });
+
+        if (!response.ok) {
+          const errText = await response.text();
+          throw new Error(`Server returned ${response.status}: ${errText}`);
+        }
+
+        const result = await response.json();
+
+        alert(`Client Registered Successfully!\nName: ${result.fullName}\nLocation: ${result.location}`);
+
+        // Reset form
+        form.reset();
+
+      } catch (error) {
+        console.error("Error:", error);
+        alert(`Failed to register client.\n${error.message}\nPlease ensure backend is running on port 8080.`);
+      }
+    });
+  </script>
+</body>
+</html>
