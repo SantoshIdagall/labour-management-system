@@ -1,4 +1,4 @@
-# Labour Management System
+## Labour Management System
 
 A full-stack web application developed using Spring Boot and MySQL to manage labour records and operations efficiently.
 
