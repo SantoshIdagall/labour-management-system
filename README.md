@@ -10,6 +10,7 @@ A full-stack web application developed using Spring Boot and MySQL to manage lab
 ## Tech Stack
 - Java
 - Spring Boot
+- Hibernate
 - MySQL
 - HTML, CSS, JavaScript
 
