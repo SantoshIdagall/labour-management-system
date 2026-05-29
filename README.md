@@ -6,13 +6,11 @@ A full-stack web application developed using Spring Boot and MySQL to manage lab
 - Add, update, delete labour , client details
 - REST API using Spring Boot
 - MySQL database integration
-
 ## Tech Stack
 - Java
 - Spring Boot
 - Hibernate
 - MySQL
 - HTML, CSS, JavaScript
-
 ## Author
 Santosh Idagall
